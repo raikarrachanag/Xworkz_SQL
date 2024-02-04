@@ -78,6 +78,8 @@ FROM weather_info
 INNER JOIN shop_info ON weather_info.Location = shop_info.Location;
 
 
+
+
 SELECT *
 FROM weather_info
 LEFT JOIN shop_info ON weather_info.Location = shop_info.Location;
@@ -88,4 +90,55 @@ FROM weather_info
 RIGHT JOIN shop_info ON weather_info.Location = shop_info.Location;
 
 
+-- Create the location_infos table
+CREATE TABLE location_infos (
+    location_id INT PRIMARY KEY,
+    location_name VARCHAR(255),
+    latitude DECIMAL(9, 6),
+    longitude DECIMAL(9, 6),
+    description TEXT
+);
+
+
+INSERT INTO location_infos VALUES(1, 'Nrupathunga Road', 40.712776, -74.005974, 'Clean road');
+INSERT INTO location_infos VALUES(2, 'Rajajinagar', 34.052235, -118.243683, 'shopping road');
+INSERT INTO location_infos VALUES(3, 'Majestic', 51.507351, -0.127758, 'clean road');
+INSERT INTO location_infos VALUES(4, 'Malleshwaram', 48.856613, 2.352222, 'food street');
+INSERT INTO location_infos VALUES(5, 'Avenue Road', -33.868820, 151.209296, 'shopping road');
+INSERT INTO location_infos VALUES(6, 'Chickpete', -22.906847, -43.172897, 'famous hotel');
+INSERT INTO location_infos VALUES(7, 'dasarahalli', 35.682839, 139.759455, 'paper factory');
+INSERT INTO location_infos VALUES(8, 'jalahalli', 41.902783, 12.496366, 'toy factory');
+INSERT INTO location_infos VALUES(9, 'kengeri', 19.432608, -99.133209, 'food street');
+INSERT INTO location_infos VALUES(10, 'Nelamangala', 52.520008, 13.404954, 'toll road');
+
+
+
+
+CREATE DATABASE employee_management;
+show tables;
+desc employees;
+CREATE DATABASE blogpostapp;
+
+CREATE TABLE blogpostapp (
+    id int,
+    username varchar(255),
+    email varchar(255),
+    password varchar(255),
+    profile_picture varchar(255),
+    bio varchar(255),
+    role varchar(255)
+);
+show tables;
+show full tables from blogpostapp;
+CREATE TABLE blogpostapp (
+    id int,
+    username varchar(255),
+    email varchar(255),
+    password varchar(255),
+    profile_picture varchar(255),
+    bio varchar(255),
+    role varchar(255)
+);
+Describe blogpostapp;
+DROP DATABASE blogpostapp;
 
