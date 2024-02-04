@@ -13,14 +13,14 @@ public class Main {
         bookService.saveBook(bookDTO);
         System.out.println("Book saved successfully!");
 
-        // Test Retrieve Operation
-        Long bookId = 1L; // Assuming the ID assigned during save operation
-        Optional<BookDTO> retrievedBook = bookService.getBookById(bookId);
+        // Test Update Author Operation
+        String updatedAuthor = "Jane Smith";
+        bookService.updateAuthorByBookName("Java Programming", updatedAuthor);
+        System.out.println("Author updated successfully!");
 
-        if (retrievedBook.isPresent()) {
-            System.out.println("Retrieved Book: " + retrievedBook.get());
-        } else {
-            System.out.println("Book not found with ID: " + bookId);
-        }
+        // Test Delete Operation
+        bookService.deleteByBookName("Java Programming");
+        System.out.println("Book deleted successfully!");
     }
 }
+
